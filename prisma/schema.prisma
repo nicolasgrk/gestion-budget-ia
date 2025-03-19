@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://postgres:qHjSgCbQQYb64b7o@db.efrmgqzoolvzarvgjios.supabase.co:5432/postgres"
+}
+
+model Transaction {
+  id            Int      @id @default(autoincrement())
+  dateOp        DateTime
+  dateVal       DateTime?
+  label         String
+  category      String?
+  categoryParent String?
+  supplierFound String?
+  amount        Float
+  comment       String?
+  accountNum    String
+  accountLabel  String
+  accountBalance Float?
+  isRecurring   Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Category {
+  id         Int      @id @default(autoincrement())
+  name       String   @unique
+  parentName String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model AIAnalysis {
+  id           Int      @id @default(autoincrement())
+  type         String   // 'spending', 'forecast', 'recurring'
+  content      String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Budget {
+  id           Int      @id @default(autoincrement())
+  category     String
+  amount       Float
+  startDate    DateTime
+  endDate      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+} 
