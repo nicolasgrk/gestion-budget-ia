@@ -1,16 +1,18 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import { NextRequest } from 'next/server';
 
 export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id);
+    const { id } = await context.params;
+    const parsedId = parseInt(id);
     const data = await request.json();
 
     const updatedTransaction = await prisma.transaction.update({
-      where: { id },
+      where: { id: parsedId },
       data: {
         label: data.label,
         category: data.category,

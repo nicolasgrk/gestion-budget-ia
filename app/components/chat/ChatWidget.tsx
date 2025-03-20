@@ -198,7 +198,7 @@ export default function ChatWidget() {
             <div ref={messagesEndRef} />
             {isLoading && (
               <div className="flex justify-center items-center text-slate-400 text-sm mt-2">
-                <div className="animate-pulse">Assistant en train d'écrire...</div>
+                <div className="animate-pulse">Assistant en train d&apos;écrire...</div>
               </div>
             )}
           </div>

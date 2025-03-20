@@ -5,10 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY!,
 });
 
-interface CategoryResult {
-  category: string;
-  categoryParent: string;
-}
+
 
 export async function categorizationAgent() {
   try {

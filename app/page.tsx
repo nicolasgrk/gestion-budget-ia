@@ -2,14 +2,10 @@
 
 import Statistics from './components/dashboard/Statistics';
 import QuickActions from './components/dashboard/QuickActions';
-import CsvUploader from './components/dashboard/CsvUploader';
 import { Card } from "@/app/components/ui/card";
 import BalanceChart from './components/dashboard/BalanceChart';
-import { Modal } from './components/ui/Modal';
-import { useState } from 'react';
 
 export default function Home() {
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   return (
     <div className="p-4 sm:p-6 lg:p-8">

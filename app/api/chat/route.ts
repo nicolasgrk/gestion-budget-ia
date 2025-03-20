@@ -17,6 +17,30 @@ interface QueryAnalysis {
   aggregation?: 'sum' | 'average' | 'count';
 }
 
+interface PrismaQuery {
+  where: {
+    dateOp?: {
+      gte?: Date;
+      lte?: Date;
+    };
+    category?: string;
+    amount?: {
+      lt?: number;
+      gt?: number;
+    };
+  };
+  orderBy: {
+    dateOp: 'desc';
+  };
+  select: {
+    label: boolean;
+    amount: boolean;
+    dateOp: boolean;
+    category: boolean;
+  };
+  take?: number;
+}
+
 async function analyzeQuestion(question: string): Promise<QueryAnalysis> {
   const analysisPrompt = `
 En tant qu'expert en analyse de questions financières, analyse la question suivante et retourne une réponse JSON structurée.
@@ -83,7 +107,7 @@ Analyse la question et retourne UNIQUEMENT l'objet JSON, sans autre texte.`;
 }
 
 async function fetchRelevantData(analysis: QueryAnalysis) {
-  const baseQuery: any = {
+  const baseQuery: PrismaQuery = {
     where: {},
     orderBy: { dateOp: 'desc' },
     select: {

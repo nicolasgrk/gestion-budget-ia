@@ -15,10 +15,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Doughnut, Bar } from 'react-chartjs-2';
-import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from 'date-fns';
-import { fr } from 'date-fns/locale';
 import { AnalysisDisplay } from "../components/AnalysisDisplay";
 
 // Enregistrer les composants Chart.js nécessaires

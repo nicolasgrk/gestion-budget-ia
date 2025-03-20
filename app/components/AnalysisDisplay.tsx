@@ -1,5 +1,3 @@
-import { Card } from "./ui/card";
-
 interface AnalysisData {
   tendances: {
     titre: string;
