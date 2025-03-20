@@ -1,6 +1,6 @@
 # Application de Gestion de Budget avec IA
 
-Cette application utilise l'intelligence artificielle pour vous aider à gérer votre budget en analysant vos transactions bancaires.
+Cette application utilise l'intelligence artificielle pour vous aider à gérer votre budget en analysant vos transactions bancaires test.
 
 ## Fonctionnalités
 
