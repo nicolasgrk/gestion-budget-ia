@@ -1,4 +1,5 @@
 'use client';
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 interface IconProps {
   className?: string;
@@ -21,6 +22,12 @@ function SearchIcon({ className }: IconProps) {
 }
 
 export default function Header() {
+  const { user, error, isLoading } = useUser();
+  if (isLoading) return <p>Chargement...</p>;
+  if (error) return <p>Erreur : {error.message}</p>;
+  if (!user) return <p>Non connecté</p>;
+
+
   return (
     <header className="h-20 border-b border-white/10 backdrop-blur-xl bg-slate-900/50 px-8 flex items-center justify-between">
       <div className="flex items-center flex-1 max-w-xl">
@@ -39,7 +46,7 @@ export default function Header() {
           <BellIcon className="w-6 h-6 text-white/60" />
         </button>
         <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
-          <span className="text-emerald-500">S</span>
+          <h1 className="text-xl font-bold">Bienvenue, {user.name} 👋</h1>
         </div>
       </div>
     </header>

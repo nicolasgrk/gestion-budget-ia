@@ -3,6 +3,7 @@
 import { TransactionsTable } from "../components/transactions/TransactionsTable";
 
 export default function TransactionsPage() {
+
   return (
     <div className="p-4 sm:p-6 lg:p-8">
       <div className="mb-6 lg:mb-8">

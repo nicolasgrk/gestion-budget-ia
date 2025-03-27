@@ -1,11 +1,11 @@
 'use client';
 
-import Statistics from './components/dashboard/Statistics';
-import QuickActions from './components/dashboard/QuickActions';
-import { Card } from "@/app/components/ui/card";
-import BalanceChart from './components/dashboard/BalanceChart';
+import Statistics from '../components/dashboard/Statistics';
+import QuickActions from '../components/dashboard/QuickActions';
+import { Card } from "@/components/ui/card";
+import BalanceChart from '../components/dashboard/BalanceChart';
 
-export default function Home() {
+export default function DashboardPage() {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8">
@@ -29,8 +29,8 @@ export default function Home() {
         </div>
         <div className="lg:col-span-1">
           <QuickActions />
-        </div>
-      </div>
+        </div> 
+       </div>
 
 
     </div>

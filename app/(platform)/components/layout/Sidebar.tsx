@@ -51,7 +51,7 @@ export default function Sidebar() {
         </div>
         
         <nav className="space-y-4">
-          <Link href="/" className={`w-12 h-12 rounded-xl ${pathname === '/' ? 'bg-white/10' : 'hover:bg-white/10'} transition-colors flex items-center justify-center ${pathname === '/' ? 'text-white/80' : 'text-white/60'}`}>
+          <Link href="/home" className={`w-12 h-12 rounded-xl ${pathname === '/home' ? 'bg-white/10' : 'hover:bg-white/10'} transition-colors flex items-center justify-center ${pathname === '/home' ? 'text-white/80' : 'text-white/60'}`}>
             <HomeIcon className="w-6 h-6" />
           </Link>
           <Link href="/charts" className={`w-12 h-12 rounded-xl ${pathname === '/charts' ? 'bg-white/10' : 'hover:bg-white/10'} transition-colors flex items-center justify-center ${pathname === '/charts' ? 'text-white/80' : 'text-white/60'}`}>
